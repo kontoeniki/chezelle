@@ -56,16 +56,16 @@ https://templatemo.com/tm-566-medic-care
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Για μένα</a>
+                                <a class="nav-link" href="#about">Η Αισθητικός</a>
                             </li>
 
                             <a class="navbar-brand d-none d-lg-block" href="index.html">
                                 Chez Elle
-                                <strong class="d-block">Κέντρο Αισθητικής</strong>
+                                <strong class="d-block">Ινστιτούτο Αισθητικής</strong>
                             </a>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#reviews">Υπηρεσίες</a>
+                                <a class="nav-link" href="#services">Υπηρεσίες</a>
                             </li>
 
                             <li class="nav-item">
@@ -114,7 +114,7 @@ https://templatemo.com/tm-566-medic-care
                                 <div class="heroLinks d-flex flex-wrap align-items-center">
                                     <a class="custom-link me-4" href="#contact" data-hover="Κλειστε Ραντεβου">Κλειστε Ραντεβου</a>
 
-                                    <p class="contact-phone mb-0"><i class="bi-phone"></i> 21 0572 5355</p>
+                                    <p class="contact-phone mb-0"><i class="bi-telephone"></i> 210 5725355</p>
                                 </div>
                             </div>
                         </div>
@@ -161,7 +161,16 @@ https://templatemo.com/tm-566-medic-care
                 </div>
             </section>
 
-            <section class="section-padding pb-0" id="timeline">
+            <section class="section-padding pb-0" id="services">
+                <div class="container">
+                    <div class="row">
+                        <h2 class="text-center mb-lg-5 mb-4">Υπηρεσίες</h2>
+
+                    </div>
+                </div>
+            </section>
+
+            <!--<section class="section-padding pb-0" id="timeline">
                 <div class="container">
                     <div class="row">
 
@@ -253,7 +262,7 @@ https://templatemo.com/tm-566-medic-care
 
                     </div>
                 </div>
-            </section>
+            </section>-->
 
 
         </main>
@@ -307,7 +316,7 @@ https://templatemo.com/tm-566-medic-care
                     </div>
 
                     <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
-                        <p class="copyright-text">Copyright © Chez Elle 2021
+                        <p class="copyright-text">Copyright © Chez Elle <span id="year"></span>
                     </div>
 
                 </div>
@@ -320,6 +329,7 @@ https://templatemo.com/tm-566-medic-care
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/scrollspy.min.js"></script>
         <script src="js/custom.js"></script>
+        <script>document.getElementById("year").innerHTML = new Date().getFullYear();</script>
 
     </body>
 </html>
