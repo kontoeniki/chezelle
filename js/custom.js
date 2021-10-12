@@ -51,7 +51,7 @@
     $(document).on("ready", ReviewsNavResize);
 
     // HREF LINKS
-    $('a[href*="#"]').click(function (event) {
+/*    $('a[href*="#"]').click(function (event) {
       if (
         location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
         var target = $(this.hash);
@@ -63,6 +63,6 @@
           }, 1000);
         }
       }
-    });
+    });*/
     
   })(window.jQuery);
