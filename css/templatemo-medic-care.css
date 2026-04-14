@@ -36,10 +36,17 @@ https://templatemo.com/tm-566-medic-care
 }
 
 body {
-    background: var(--white-color);
-    font-family: var(--body-font-family);    
+    background: linear-gradient(-45deg, #eef4ed, #fdfaf2, #e4f5f4, #fef5e4);
+    background-size: 400% 400%;
+    animation: gradientFlow 18s ease infinite;
+    font-family: var(--body-font-family);
     position: relative;
-    padding-top: 94px;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 /*---------------------------------------
@@ -117,8 +124,15 @@ a:hover {
 }
 
 .section-padding {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
 }
 
 /*---------------------------------------
@@ -127,13 +141,14 @@ a:hover {
 .custom-link {
   display: inline-block;
   text-decoration: none;
-  border: 1px solid var(--border-color);
-  color: var(--primary-color);
+  background: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  color: #fff;
   pointer-events: auto;
   font-weight: var(--font-weight-semibold);
   line-height: 40px;
   position: relative;
-  padding: 0 30px;
+  padding: 0 34px;
   box-sizing: border-box;
   margin: 0;
   -webkit-user-select: none;
@@ -141,14 +156,20 @@ a:hover {
       -ms-user-select: none;
           user-select: none;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 4px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: btnPulse 2.8s ease-in-out infinite;
+}
+
+.custom-link:hover {
+  color: #fff;
 }
 
 .custom-link::before {
   content: attr(data-hover);
-  background-color: var(--border-color);
-  color: var(--primary-color);
+  background-color: #026b64;
+  color: #fff;
   position: absolute;
   top: 100%;
   bottom: 0;
@@ -160,6 +181,11 @@ a:hover {
 
 .custom-link:hover::before {
   top: 0;
+}
+
+@keyframes btnPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(3, 143, 134, 0.55); }
+  60%      { box-shadow: 0 0 0 16px rgba(3, 143, 134, 0); }
 }
 
 b,
@@ -736,7 +762,15 @@ strong {
 }
 
 .copyright-text {
-  font-size: var(--menu-font-size);
+  position: fixed;
+  bottom: 12px;
+  right: 16px;
+  font-size: 11px;
+  color: #aaa;
+  opacity: 0.5;
+  margin: 0;
+  pointer-events: none;
+  z-index: 10;
 }
 
 /*---------------------------------------
@@ -771,6 +805,7 @@ strong {
   color: var(--primary-color);
 }
 
+
 /*---------------------------------------
   RESPONSIVE STYLES               
 -----------------------------------------*/
@@ -781,10 +816,6 @@ strong {
 }
 
 @media screen and (max-width: 991px) {
-  body {
-    padding-top: 74px;
-  }
-
   h1 {
     font-size: 38px;
   }
@@ -912,5 +943,110 @@ strong {
 
   .timeline::before {
     left: 42px;
+  }
+}
+
+/*---------------------------------------
+  HERO SECTION
+-----------------------------------------*/
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.hero-content {
+  animation: fadeInUp 0.9s ease both;
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 20px 60px rgba(3, 143, 134, 0.22),
+              0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: floatLogo 7s ease-in-out infinite, fadeInUp 0.9s ease both;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--dark-color);
+  margin-bottom: 0.25rem;
+  animation: fadeInUp 0.9s ease 0.15s both;
+}
+
+.hero-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  animation: fadeInUp 0.9s ease 0.25s both;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: var(--p-color);
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.9s ease 0.35s both;
+}
+
+.hero-section .custom-link {
+  animation: fadeInUp 0.9s ease 0.5s both, btnPulse 2.8s ease-in-out 1.5s infinite;
+  font-size: 1rem;
+  line-height: 48px;
+  padding: 0 44px;
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-14px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*---------------------------------------
+  FOOTER REFINEMENTS
+-----------------------------------------*/
+.site-footer {
+  background: rgba(249, 249, 249, 0.85);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--border-color);
+}
+
+@media screen and (max-width: 991px) {
+  .hero-logo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-logo {
+    width: 130px;
+    height: 130px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
   }
 }
